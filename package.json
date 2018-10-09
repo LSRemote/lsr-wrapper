@@ -1,0 +1,18 @@
+{
+  "name": "lsr-wrapper",
+  "version": "2.1.1",
+  "description": "NodeJS wrapper for live-stream-radio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "live-stream-radio"
+  ],
+  "author": "Andreas Heimann <andreas@iklikla.de>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "querystring": "^0.2.0"
+  }
+}
