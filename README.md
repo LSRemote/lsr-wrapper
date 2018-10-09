@@ -2,6 +2,10 @@
 ## NodeJS wrapper for the live-stream-radio api
 lsr-wrapper is a promise-based wrapper for the [live-stream-radio](https://github.com/torch2424/live-stream-radio) project and it's api for external access.
 
+
+![Github All Releases](https://img.shields.io/github/downloads/lsremote/lsr-wrapper/total.svg?style=flat-square) ![GitHub](https://img.shields.io/github/license/lsremote/lsr-wrapper.svg?style=flat-square) [![npm](https://img.shields.io/npm/v/lsr-wrapper.svg?style=flat-square)](https://npmjs.com/package/lsr-wrapper)
+
+
 ## Installing
 Using npm:
 ```
