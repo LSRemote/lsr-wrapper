@@ -11,6 +11,11 @@
   ],
   "author": "Andreas Heimann <andreas@iklikla.de>",
   "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LSRemote/lsr-wrapper.git"
+  },
+  "homepage": "https://lsremote.github.io",
   "dependencies": {
     "axios": "^0.18.0",
     "querystring": "^0.2.0"
