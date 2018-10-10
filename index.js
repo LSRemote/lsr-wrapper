@@ -92,7 +92,7 @@ class liveStreamRadio {
   }
 
   // /config (getFullConfig)
-  /* async getConfigAll() {
+  async getConfigAll() {
     var apiPath = "http://" + this.ip + ":" + this.port + "/config";
     var options = {
       headers: {
@@ -102,14 +102,14 @@ class liveStreamRadio {
 
     return axios.get(apiPath, options)
     .then(function(response) {
-      return response.data;
+      return response.data.value;
     }).catch(function(error) {
       if(error.response.status == 401) { throw new Error("Api-Key is not correct! (HTTP 401)"); }
     });
-  } */
+  }
 
   // /config (getConfigKey)
-  /* async getConfigByKey(configKey) {
+  async getConfigByKey(configKey) {
     var apiPath = "http://" + this.ip + ":" + this.port + "/config";
     var options = {
       headers: {
@@ -125,7 +125,7 @@ class liveStreamRadio {
     }).catch(function(error) {
       if(error.response.status == 401) { throw new Error("Api-Key is not correct! (HTTP 401)"); }
     });
-  } */
+  }
 
   // /config (setConfigKey)
 
