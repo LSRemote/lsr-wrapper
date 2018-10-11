@@ -62,8 +62,36 @@ myRadio.getLibrary("audio").then(function(data) {
 });
 ```
 
-### Config
-**Coming Soon!**
+
+### Get full config
+```
+var liveStreamRadio = require('lsr-wrapper');
+var myRadio = new liveStreamRadio("127.0.0.1", "8000", "super-secret-api-key");
+
+myRadio.getConfigAll().then(function(data) {
+  console.log(data);
+});
+```
+
+### Get a config value by key
+```
+var liveStreamRadio = require('lsr-wrapper');
+var myRadio = new liveStreamRadio("127.0.0.1", "8000", "super-secret-api-key");
+
+myRadio.getConfigByKey("interlude.frequency").then(function(data) {
+  console.log(data);
+});
+```
+
+### Set a config value by key
+```
+var liveStreamRadio = require('lsr-wrapper');
+var myRadio = new liveStreamRadio("127.0.0.1", "8000", "super-secret-api-key");
+
+myRadio.setConfigByKey("interlude.frequency", "0.5").then(function(data) {
+  console.log(data);
+});
+```
 
 ## Versioning
 This project will always version itself after the `live-stream-radio` version so the same version will always be compatible with each other.
