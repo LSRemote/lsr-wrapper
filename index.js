@@ -21,7 +21,11 @@ class liveStreamRadio {
     .then(function(response) {
       return response.data.history;
     }).catch(function(error) {
-      if(error.response.status == 401) { throw new Error("Api-Key is not correct! (HTTP 401)"); }
+      if(error.response) {
+        if(error.response.status == 401) { throw new Error("Api-Key is not correct! (HTTP 401)"); }
+      } else {
+        throw new Error(error);
+      }
     });
   }
 
@@ -30,7 +34,8 @@ class liveStreamRadio {
     var apiPath = "http://" + this.ip + ":" + this.port + "/stream/start";
     var options = {
       headers: {
-        "Authorization": this.apiKey
+        "Authorization": this.apiKey,
+        "Content-Type": "application/x-www-form-urlencoded"
       }
     };
     var data = {};
@@ -43,7 +48,11 @@ class liveStreamRadio {
         return response.data.message;
       }
     }).catch(function(error) {
-      if(error.response.status == 401) { throw new Error("Api-Key is not correct! (HTTP 401)"); }
+      if(error.response) {
+        if(error.response.status == 401) { throw new Error("Api-Key is not correct! (HTTP 401)"); }
+      } else {
+        throw new Error(error);
+      }
     });
   }
 
@@ -52,7 +61,8 @@ class liveStreamRadio {
     var apiPath = "http://" + this.ip + ":" + this.port + "/stream/stop";
     var options = {
       headers: {
-        "Authorization": this.apiKey
+        "Authorization": this.apiKey,
+        "Content-Type": "application/x-www-form-urlencoded"
       }
     };
     var data = {};
@@ -65,7 +75,11 @@ class liveStreamRadio {
         return response.data.message;
       }
     }).catch(function(error) {
-      if(error.response.status == 401) { throw new Error("Api-Key is not correct! (HTTP 401)"); }
+      if(error.response) {
+        if(error.response.status == 401) { throw new Error("Api-Key is not correct! (HTTP 401)"); }
+      } else {
+        throw new Error(error);
+      }
     });
   }
 
@@ -74,7 +88,8 @@ class liveStreamRadio {
     var apiPath = "http://" + this.ip + ":" + this.port + "/stream/restart";
     var options = {
       headers: {
-        "Authorization": this.apiKey
+        "Authorization": this.apiKey,
+        "Content-Type": "application/x-www-form-urlencoded"
       }
     };
     var data = {};
@@ -87,7 +102,11 @@ class liveStreamRadio {
         return response.data.message;
       }
     }).catch(function(error) {
-      if(error.response.status == 401) { throw new Error("Api-Key is not correct! (HTTP 401)"); }
+      if(error.response) {
+        if(error.response.status == 401) { throw new Error("Api-Key is not correct! (HTTP 401)"); }
+      } else {
+        throw new Error(error);
+      }
     });
   }
 
@@ -104,7 +123,11 @@ class liveStreamRadio {
     .then(function(response) {
       return response.data.value;
     }).catch(function(error) {
-      if(error.response.status == 401) { throw new Error("Api-Key is not correct! (HTTP 401)"); }
+      if(error.response) {
+        if(error.response.status == 401) { throw new Error("Api-Key is not correct! (HTTP 401)"); }
+      } else {
+        throw new Error(error);
+      }
     });
   }
 
@@ -123,7 +146,35 @@ class liveStreamRadio {
     .then(function(response) {
       return response.data;
     }).catch(function(error) {
-      if(error.response.status == 401) { throw new Error("Api-Key is not correct! (HTTP 401)"); }
+      if(error.response) {
+        if(error.response.status == 401) { throw new Error("Api-Key is not correct! (HTTP 401)"); }
+      } else {
+        throw new Error(error);
+      }
+    });
+  }
+
+  // /config (setConfig)
+  async setConfigByKey(configKey, newValue) {
+    var apiPath = "http://" + this.ip + ":" + this.port + "/config";
+    var options = {
+      headers: {
+        "Authorization": this.apiKey,
+        "Content-Type": "application/x-www-form-urlencoded"
+      }
+    };
+
+    var data = qs.stringify({ key: configKey, value: newValue });
+
+    return axios.post(apiPath, data, options)
+    .then(function(response) {
+      return response.data.response;
+    }).catch(function(error) {
+      if(error.response) {
+        if(error.response.status == 401) { throw new Error("Api-Key is not correct! (HTTP 401)"); }
+      } else {
+        throw new Error(error);
+      }
     });
   }
 
@@ -142,7 +193,11 @@ class liveStreamRadio {
     .then(function(response) {
       return response.data.audio;
     }).catch(function(error) {
-      if(error.response.status == 401) { throw new Error("Api-Key is not correct! (HTTP 401)"); }
+      if(error.response) {
+        if(error.response.status == 401) { throw new Error("Api-Key is not correct! (HTTP 401)"); }
+      } else {
+        throw new Error(error);
+      }
     });
   }
 }
