@@ -8,6 +8,52 @@ class liveStreamRadio {
     this.apiKey = apiKey;
   }
 
+  // /
+  async ping() {
+    var apiPath = "http://" + this.ip + ":" + this.port + "/";
+    var options = {
+      headers: {
+        "Authorization": this.apiKey
+      }
+    };
+
+    return axios.get(apiPath, options)
+    .then(function(response) {
+      if(response.data.live_stream_radio) {
+        return true;
+      } else {
+        return false;
+      }
+    }).catch(function(error) {
+      if(error.response) {
+        if(error.response.status == 401) { throw new Error("Api-Key is not correct! (HTTP 401)"); }
+      } else {
+        throw new Error(error);
+      }
+    });
+  }
+
+  // /stream
+  async getStreamStatus() {
+    var apiPath = "http://" + this.ip + ":" + this.port + "/stream";
+    var options = {
+      headers: {
+        "Authorization": this.apiKey
+      }
+    };
+
+    return axios.get(apiPath, options)
+    .then(function(response) {
+      return response.data;
+    }).catch(function(error) {
+      if(error.response) {
+        if(error.response.status == 401) { throw new Error("Api-Key is not correct! (HTTP 401)"); }
+      } else {
+        throw new Error(error);
+      }
+    });
+  }
+
   // /stream/history
   async getStreamHistory() {
     var apiPath = "http://" + this.ip + ":" + this.port + "/stream/history";

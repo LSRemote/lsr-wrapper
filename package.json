@@ -1,6 +1,6 @@
 {
   "name": "lsr-wrapper",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "NodeJS wrapper for live-stream-radio",
   "main": "index.js",
   "scripts": {

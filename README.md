@@ -11,6 +11,28 @@ $ npm install lsr-wrapper
 ```
 
 ## Example
+### Ping API
+Useful for checking if the API is running. Returns `true` if the API is reachable and `false` if it is not.
+
+```
+var liveStreamRadio = require('lsr-wrapper');
+var myRadio = new liveStreamRadio("127.0.0.1", "8000", "super-secret-api-key");
+
+myRadio.ping().then(function(data) {
+  console.log(data);
+});
+```
+
+### Stream Status
+```
+var liveStreamRadio = require('lsr-wrapper');
+var myRadio = new liveStreamRadio("127.0.0.1", "8000", "super-secret-api-key");
+
+myRadio.getStreamStatus().then(function(data) {
+  console.log(data);
+});
+```
+
 ### Stream History
 ```
 var liveStreamRadio = require('lsr-wrapper');
@@ -94,7 +116,7 @@ myRadio.setConfigByKey("interlude.frequency", "0.5").then(function(data) {
 ```
 
 ## Versioning
-This project will always version itself after the `live-stream-radio` version so the same version will always be compatible with each other.
+This project will always version itself after the `live-stream-radio` version so the same version will always be compatible with each other. The patch number can differ if there were changes between live-stream-radio releases (for example 2.2.x is compatible with live-stream-radio 2.2.x)
 
 ## Credits
 * Axios for their wonderful module
