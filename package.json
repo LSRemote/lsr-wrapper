@@ -17,7 +17,7 @@
   },
   "homepage": "https://lsremote.github.io",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "querystring": "^0.2.0"
   }
 }
