@@ -16,7 +16,7 @@ Useful for checking if the API is running. Returns `true` if the API is reachabl
 
 ```
 var liveStreamRadio = require('lsr-wrapper');
-var myRadio = new liveStreamRadio("127.0.0.1", "8000", "super-secret-api-key");
+var myRadio = new liveStreamRadio("http", "127.0.0.1", "8000", "super-secret-api-key");
 
 myRadio.ping().then(function(data) {
   console.log(data);
@@ -26,7 +26,7 @@ myRadio.ping().then(function(data) {
 ### Stream Status
 ```
 var liveStreamRadio = require('lsr-wrapper');
-var myRadio = new liveStreamRadio("127.0.0.1", "8000", "super-secret-api-key");
+var myRadio = new liveStreamRadio("http", "127.0.0.1", "8000", "super-secret-api-key");
 
 myRadio.getStreamStatus().then(function(data) {
   console.log(data);
@@ -36,7 +36,7 @@ myRadio.getStreamStatus().then(function(data) {
 ### Stream History
 ```
 var liveStreamRadio = require('lsr-wrapper');
-var myRadio = new liveStreamRadio("127.0.0.1", "8000", "super-secret-api-key");
+var myRadio = new liveStreamRadio("http", "127.0.0.1", "8000", "super-secret-api-key");
 
 myRadio.getStreamHistory().then(function(data) {
   console.log(data);
@@ -46,7 +46,7 @@ myRadio.getStreamHistory().then(function(data) {
 ### Stream Start
 ```
 var liveStreamRadio = require('lsr-wrapper');
-var myRadio = new liveStreamRadio("127.0.0.1", "8000", "super-secret-api-key");
+var myRadio = new liveStreamRadio("http", "127.0.0.1", "8000", "super-secret-api-key");
 
 myRadio.streamStart().then(function(data) {
   console.log(data);
@@ -56,7 +56,7 @@ myRadio.streamStart().then(function(data) {
 ### Stream Stop
 ```
 var liveStreamRadio = require('lsr-wrapper');
-var myRadio = new liveStreamRadio("127.0.0.1", "8000", "super-secret-api-key");
+var myRadio = new liveStreamRadio("http", "127.0.0.1", "8000", "super-secret-api-key");
 
 myRadio.streamStop().then(function(data) {
   console.log(data);
@@ -66,7 +66,7 @@ myRadio.streamStop().then(function(data) {
 ### Stream Restart
 ```
 var liveStreamRadio = require('lsr-wrapper');
-var myRadio = new liveStreamRadio("127.0.0.1", "8000", "super-secret-api-key");
+var myRadio = new liveStreamRadio("http", "127.0.0.1", "8000", "super-secret-api-key");
 
 myRadio.streamRestart().then(function(data) {
   console.log(data);
@@ -77,7 +77,7 @@ myRadio.streamRestart().then(function(data) {
 **Video Support Coming Soon!**
 ```
 var liveStreamRadio = require('lsr-wrapper');
-var myRadio = new liveStreamRadio("127.0.0.1", "8000", "super-secret-api-key");
+var myRadio = new liveStreamRadio("http", "127.0.0.1", "8000", "super-secret-api-key");
 
 myRadio.getLibrary("audio").then(function(data) {
   console.log(data);
@@ -88,7 +88,7 @@ myRadio.getLibrary("audio").then(function(data) {
 ### Get full config
 ```
 var liveStreamRadio = require('lsr-wrapper');
-var myRadio = new liveStreamRadio("127.0.0.1", "8000", "super-secret-api-key");
+var myRadio = new liveStreamRadio("http", "127.0.0.1", "8000", "super-secret-api-key");
 
 myRadio.getConfigAll().then(function(data) {
   console.log(data);
@@ -98,7 +98,7 @@ myRadio.getConfigAll().then(function(data) {
 ### Get a config value by key
 ```
 var liveStreamRadio = require('lsr-wrapper');
-var myRadio = new liveStreamRadio("127.0.0.1", "8000", "super-secret-api-key");
+var myRadio = new liveStreamRadio("http", "127.0.0.1", "8000", "super-secret-api-key");
 
 myRadio.getConfigByKey("interlude.frequency").then(function(data) {
   console.log(data);
@@ -108,7 +108,7 @@ myRadio.getConfigByKey("interlude.frequency").then(function(data) {
 ### Set a config value by key
 ```
 var liveStreamRadio = require('lsr-wrapper');
-var myRadio = new liveStreamRadio("127.0.0.1", "8000", "super-secret-api-key");
+var myRadio = new liveStreamRadio("http", "127.0.0.1", "8000", "super-secret-api-key");
 
 myRadio.setConfigByKey("interlude.frequency", "0.5").then(function(data) {
   console.log(data);
