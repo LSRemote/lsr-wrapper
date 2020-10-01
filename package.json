@@ -1,6 +1,6 @@
 {
   "name": "lsr-wrapper",
-  "version": "2.2.2",
+  "version": "2.2.3",
   "description": "NodeJS wrapper for live-stream-radio",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
   },
   "homepage": "https://lsremote.github.io",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "querystring": "^0.2.0"
   }
 }

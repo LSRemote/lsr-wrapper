@@ -2,7 +2,8 @@ const axios = require('axios');
 const qs = require('querystring');
 
 class liveStreamRadio {
-  constructor(ip, port, apiKey) {
+  constructor(protocol, ip, port, apiKey) {
+    this.protocol = protocol;
     this.ip = ip;
     this.port = port;
     this.apiKey = apiKey;
@@ -10,7 +11,7 @@ class liveStreamRadio {
 
   // /
   async ping() {
-    var apiPath = "http://" + this.ip + ":" + this.port + "/";
+    var apiPath = this.protocol + "://" + this.ip + ":" + this.port + "/";
     var options = {
       headers: {
         "Authorization": this.apiKey
@@ -35,7 +36,7 @@ class liveStreamRadio {
 
   // /stream
   async getStreamStatus() {
-    var apiPath = "http://" + this.ip + ":" + this.port + "/stream";
+    var apiPath = this.protocol + "://" + this.ip + ":" + this.port + "/stream";
     var options = {
       headers: {
         "Authorization": this.apiKey
@@ -56,7 +57,7 @@ class liveStreamRadio {
 
   // /stream/history
   async getStreamHistory() {
-    var apiPath = "http://" + this.ip + ":" + this.port + "/stream/history";
+    var apiPath = this.protocol + "://" + this.ip + ":" + this.port + "/stream/history";
     var options = {
       headers: {
         "Authorization": this.apiKey
@@ -77,7 +78,7 @@ class liveStreamRadio {
 
   // /stream/start
   async streamStart() {
-    var apiPath = "http://" + this.ip + ":" + this.port + "/stream/start";
+    var apiPath = this.protocol + "://" + this.ip + ":" + this.port + "/stream/start";
     var options = {
       headers: {
         "Authorization": this.apiKey,
@@ -104,7 +105,7 @@ class liveStreamRadio {
 
   // /stream/stop
   async streamStop() {
-    var apiPath = "http://" + this.ip + ":" + this.port + "/stream/stop";
+    var apiPath = this.protocol + "://" + this.ip + ":" + this.port + "/stream/stop";
     var options = {
       headers: {
         "Authorization": this.apiKey,
@@ -131,7 +132,7 @@ class liveStreamRadio {
 
   // /stream/restart
   async streamRestart() {
-    var apiPath = "http://" + this.ip + ":" + this.port + "/stream/restart";
+    var apiPath = this.protocol + "://" + this.ip + ":" + this.port + "/stream/restart";
     var options = {
       headers: {
         "Authorization": this.apiKey,
@@ -158,7 +159,7 @@ class liveStreamRadio {
 
   // /config (getFullConfig)
   async getConfigAll() {
-    var apiPath = "http://" + this.ip + ":" + this.port + "/config";
+    var apiPath = this.protocol + "://" + this.ip + ":" + this.port + "/config";
     var options = {
       headers: {
         "Authorization": this.apiKey
@@ -179,7 +180,7 @@ class liveStreamRadio {
 
   // /config (getConfigKey)
   async getConfigByKey(configKey) {
-    var apiPath = "http://" + this.ip + ":" + this.port + "/config";
+    var apiPath = this.protocol + "://" + this.ip + ":" + this.port + "/config";
     var options = {
       headers: {
         "Authorization": this.apiKey
@@ -202,7 +203,7 @@ class liveStreamRadio {
 
   // /config (setConfig)
   async setConfigByKey(configKey, newValue) {
-    var apiPath = "http://" + this.ip + ":" + this.port + "/config";
+    var apiPath = this.protocol + "://" + this.ip + ":" + this.port + "/config";
     var options = {
       headers: {
         "Authorization": this.apiKey,
@@ -228,7 +229,7 @@ class liveStreamRadio {
 
   // /library/audio
   async getLibrary(mode = "audio") {
-    var apiPath = "http://" + this.ip + ":" + this.port + "/library/" + mode;
+    var apiPath = this.protocol + "://" + this.ip + ":" + this.port + "/library/" + mode;
     var options = {
       headers: {
         "Authorization": this.apiKey
